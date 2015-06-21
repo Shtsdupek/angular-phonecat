@@ -11,11 +11,6 @@ productcatControllers.controller('ProductListCtrl', ['$scope', 'Product',
 
 productcatControllers.controller('ProductDetailCtrl', ['$scope', '$routeParams', 'Product',
   function($scope, $routeParams, Product) {
-    $scope.product = Product.get({ productId: $routeParams.productId}, function(product) {
-      $scope.mainImageUrl = product.images[0];
-    });
-
-    $scope.setImage = function(imageUrl) {
-      $scope.mainImageUrl = imageUrl;
-    }
+    $scope.product = Product.get({ productId: $routeParams.productId});
+    console.log($scope.product);
   }]);
